@@ -1,0 +1,29 @@
+{% extends "twitter/base.html" %}
+{% block content %}
+<div class="container">
+   <div class="content-section">
+      <div class="media">
+        <div class="media-body">
+          <h2 class="account-heading">{{ posts.author.username }}</h2>
+          <p class="text-secondary">{{ posts.author.email }}</p>
+        </div>
+      </div>
+
+      {% for post in posts %}
+        <h3>{{post.author.username}}, posts:</h3>
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <small class="mr-2" >{{ post.author }}</small>
+              <small class="text-muted">{{ post.date_posted }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+        </article>
+      {% empty %}
+       <h3> {{post.author.username}},you have no post yet :( </h3>
+      {% endfor %}
+   </div>
+</div>
+{% endblock content %}

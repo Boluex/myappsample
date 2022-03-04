@@ -1,0 +1,25 @@
+{% extends "twitter/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+    <h3 class="white-important">
+        {{  tag_line }}
+    </h3>
+    <form method="POST" class="col-12 col-md-6 no-padding pr-3 pr-md-0">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <div class="form-outline mb-4">
+              <input type="text"  name="stuff" class="form-control form-control-lg" />
+              <label class="form-label">Your tweet</label>
+            </div>
+            <div class="form-outline mb-4">
+              <input type="text" name="stiff" class="form-control form-control-lg" />
+              <label class="form-label">Tag your friends</label>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-primary" type="submit">Submit changes</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}

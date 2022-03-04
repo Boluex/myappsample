@@ -1,0 +1,23 @@
+{% extends "twitter/base.html" %}
+{% block content %}
+<div class="container">
+   <div class="content-section">
+      <div class="media">
+        <div class="media-body">
+          <h3>{{user.username}}, you searched for this:</h3>
+        </div>
+      </div>
+
+      {% for post in store %}
+
+        <article class="media content-section">
+            <p class="article-content">{{ post.content }}</p>
+            </hr>
+          </div>
+        </article>
+      {% empty %}
+       <h3> No content seen  :( </h3>
+      {% endfor %}
+   </div>
+</div>
+{% endblock content %}
